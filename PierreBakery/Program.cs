@@ -1,3 +1,6 @@
+using System;
+using Stock;
+
 namespace PierreBakery
 {
   public class Program
@@ -13,8 +16,8 @@ namespace PierreBakery
       int numBread = int.Parse(strBread);
       Console.WriteLine("How many Pastries would you like?");
       string strPastry = Console.ReadLine();
-      int numPastry = int.Parse(numBread);
-      int totalCost = Something(numBread, numPastry);
+      int numPastry = int.Parse(strPastry);
+      int totalCost = Bread.BreadCost(numBread) + Pastry.PastryCost(numPastry);
       Console.WriteLine("The total cost of your order is $" + totalCost);
     }
   }
