@@ -21,5 +21,13 @@ namespace PierreBakery.Tests
       int testPastryCost = Pastry.PastryCost(testPastry);
       Assert.AreEqual(12, testPastryCost);
     }
+
+    [TestMethod]
+    public void FableCost_GetCorrectCostOfFableBreadStick_Int()
+    {
+      int testFable = 15;
+      int testFableCost = Fable.FableCost(testFable);
+      Assert.AreEqual(925, testFableCost);
+    }
   }
 }
