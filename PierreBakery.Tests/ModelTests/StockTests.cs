@@ -7,13 +7,14 @@ namespace PierreBakery.Tests
   public class PierreBakeryTests
   {
     [TestMethod]
-    public void MethodName_Description_Expected()
+    public void BreadCost_GetCorrectCostOfBread_Int()
     {
       //Arrange
-
+      int testBread = 4;
       //Act
-
+      int testBreadCost = Bread.BreadCost(testBread);
       //Assert
+      Assert.AreEqual(10, testBreadCost);
     }
   }
 }
