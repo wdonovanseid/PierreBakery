@@ -14,13 +14,13 @@ namespace PierreBakery
       Console.WriteLine("The Fabled BreadStick: Buy 1 for $100, 3 for $75 each or 10 for $50 each.");
       Console.WriteLine("How many Baguettes would you like?");
       string strBaguette = Console.ReadLine();
-      try
+      if (!(int.Parse(strBaguette)) || int.Parse(strBaguette) < 0)
+      {
+        Console.WriteLine("Please enter a valid number.");
+      }
+      else
       {
 
-      }
-      catch
-      {
-        
       }
       int numBaguette = int.Parse(strBaguette);
       Console.WriteLine("How much Sourdough Bread would you like?");
