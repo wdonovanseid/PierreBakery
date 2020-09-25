@@ -17,8 +17,8 @@ namespace PierreBakery
       Console.WriteLine("How many Pastries would you like?");
       string strPastry = Console.ReadLine();
       int numPastry = int.Parse(strPastry);
-      int totalCost = Bread.BreadCost(numBread) + Pastry.PastryCost(numPastry);
-      Console.WriteLine("The total cost of your order is $" + totalCost);
+      CustomerOrder cusOrder = new CustomerOrder(numBread, numPastry);
+      Console.WriteLine("The total cost of your order is $" + cusOrder._totalOrderCost);
     }
   }
 }
