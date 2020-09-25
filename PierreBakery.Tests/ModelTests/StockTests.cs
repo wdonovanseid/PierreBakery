@@ -9,12 +9,17 @@ namespace PierreBakery.Tests
     [TestMethod]
     public void BreadCost_GetCorrectCostOfBread_Int()
     {
-      //Arrange
       int testBread = 4;
-      //Act
       int testBreadCost = Bread.BreadCost(testBread);
-      //Assert
       Assert.AreEqual(10, testBreadCost);
+    }
+
+    [TestMethod]
+    public void PastryCost_GetCorrectCostOfPastry_Int()
+    {
+      int testPastry = 7;
+      int testPastryCost = Pastry.PastryCost(testPastry);
+      Assert.AreEqual(12, testPastryCost);
     }
   }
 }
