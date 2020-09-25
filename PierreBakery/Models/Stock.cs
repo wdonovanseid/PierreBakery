@@ -1,5 +1,3 @@
-using System;
-
 namespace Stock
 {
   public class CustomerOrder

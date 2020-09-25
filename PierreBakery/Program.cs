@@ -15,13 +15,11 @@ namespace PierreBakery
       Console.WriteLine("The Fabled BreadStick: Buy 1 for $100, 3 for $75 each or 10 for $50 each.");
       List<int> productNumOrder = new List<int> {};
       string[] productArray = {"Baguettes", "Sourdough Breads", "Rye Breads", "Pastries", "Fabled Breadsticks"};
-      foreach (string productN in productArray)
+      foreach (string productName in productArray)
       {
-        int productNum = GetProductNum(productN);
-        productNumOrder.Add(productNum);
+        productNumOrder.Add(GetProductNum(productName));
       }
-      int numBread = productNumOrder[0] + productNumOrder[1] + productNumOrder[2];
-      CustomerOrder cusOrder = new CustomerOrder(numBread, productNumOrder[3], productNumOrder[4]);
+      CustomerOrder cusOrder = new CustomerOrder(productNumOrder[0] + productNumOrder[1] + productNumOrder[2], productNumOrder[3], productNumOrder[4]);
       Console.WriteLine("The total cost of your order is $" + cusOrder._totalOrderCost);
       EndProgram();
     }
@@ -43,7 +41,7 @@ namespace PierreBakery
 
     public static void EndProgram()
     {
-      Console.WriteLine("Buy more? 'Y' for yes; 'N' for no");
+      Console.WriteLine("Buy more? Enter 'Y' for yes; 'N' for no");
       string yesOrNo = Console.ReadLine();
       if (yesOrNo.ToUpper() == "Y")
       {
