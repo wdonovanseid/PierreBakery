@@ -20,16 +20,7 @@ namespace Stock
       return Bread.BreadCost(numBread) + Pastry.PastryCost(numPastry) + Fable.FableCost(numFable);
     }
   }
-  
-  public abstract class Product
-  {
-    private int _cost { get; set; }
 
-    public GetProductCost(int numProduct)
-    {
-      _cost = numProduct;
-    }
-  }
   public class Bread
   {
     public static int BreadCost(int numBread)
