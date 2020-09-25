@@ -1,6 +1,6 @@
-namespace asdf
+namespace PierreBakery
 {
-  public class asdf
+  public class Program
   {
     public static void Main()
     {
