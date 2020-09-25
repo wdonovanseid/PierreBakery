@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Stock;
 
 namespace PierreBakery
@@ -12,74 +13,50 @@ namespace PierreBakery
       Console.WriteLine("All Bread: Buy 2, get 1 free. A single loaf costs $5.");
       Console.WriteLine("All Pastries: Buy 1 for $2 or 3 for $5.");
       Console.WriteLine("The Fabled BreadStick: Buy 1 for $100, 3 for $75 each or 10 for $50 each.");
-      int numBaguette = GetBaguettes();
-      int value;
-      Console.WriteLine("How much Sourdough Bread would you like?");
-      string strSourdough = Console.ReadLine();
-      int numSourdough = 0;
-      if (int.TryParse(strSourdough, out value) && int.Parse(strSourdough) >= 0)
+      List<int> productNumOrder = new List<int> {};
+      string[] productArray = {"Baguettes", "Sourdough Breads", "Rye Breads", "Pastries", "Fabled Breadsticks"};
+      foreach (string productN in productArray)
       {
-        numSourdough = int.Parse(strSourdough);
+        int productNum = GetProductNum(productN);
+        productNumOrder.Add(productNum);
       }
-      else
-      {
-        Console.WriteLine("Please enter a valid number.");
-        Main();
-      }
-      Console.WriteLine("How much Rye Bread would you like?");
-      string strRye = Console.ReadLine();
-      int numRye = 0;
-      if (int.TryParse(strRye, out value) && int.Parse(strRye) >= 0)
-      {
-        numRye = int.Parse(strRye);
-      }
-      else
-      {
-        Console.WriteLine("Please enter a valid number.");
-        Main();
-      }
-      int numBread = numBaguette + numSourdough + numRye;
-      Console.WriteLine("How many Pastries would you like?");
-      string strPastry = Console.ReadLine();
-      int numPastry = 0;
-      if (int.TryParse(strPastry, out value) && int.Parse(strPastry) >= 0)
-      {
-        numPastry = int.Parse(strPastry);
-      }
-      else
-      {
-        Console.WriteLine("Please enter a valid number.");
-        Main();
-      }
-      Console.WriteLine("How many Fabled Breadsticks would you like?");
-      string strFable = Console.ReadLine();
-      int numFable = 0;
-      if (int.TryParse(strFable, out value) && int.Parse(strFable) >= 0)
-      {
-        numFable = int.Parse(strFable);
-      }
-      else
-      {
-        Console.WriteLine("Please enter a valid number.");
-        Main();
-      }
-      CustomerOrder cusOrder = new CustomerOrder(numBread, numPastry, numFable);
+      int numBread = productNumOrder[0] + productNumOrder[1] + productNumOrder[2];
+      CustomerOrder cusOrder = new CustomerOrder(numBread, productNumOrder[3], productNumOrder[4]);
       Console.WriteLine("The total cost of your order is $" + cusOrder._totalOrderCost);
-      Console.WriteLine("Buy more?");
+      EndProgram();
     }
-    public static int GetBaguettes()
+    public static int GetProductNum(string productName)
     {
-      Console.WriteLine("How many Baguettes would you like?");
-      string strBaguette = Console.ReadLine();
+      Console.WriteLine("How many " + productName + " would you like?");
+      string strProduct = Console.ReadLine();
       int value;
-      if (int.TryParse(strBaguette, out value) && int.Parse(strBaguette) >= 0)
+      if (int.TryParse(strProduct, out value) && int.Parse(strProduct) >= 0)
       {
-        return int.Parse(strBaguette);
+        return int.Parse(strProduct);
       }
       else
       {
         Console.WriteLine("Please enter a valid number.");
-        return GetBaguettes();
+        return GetProductNum(productName);
+      }
+    }
+
+    public static void EndProgram()
+    {
+      Console.WriteLine("Buy more? 'Y' for yes; 'N' for no");
+      string yesOrNo = Console.ReadLine();
+      if (yesOrNo.ToUpper() == "Y")
+      {
+        Main();
+      }
+      else if (yesOrNo.ToUpper() == "N")
+      {
+        System.Environment.Exit(1);
+      }
+      else
+      {
+        Console.WriteLine("Please enter 'Y' or 'N'.");
+        EndProgram();
       }
     }
   }
