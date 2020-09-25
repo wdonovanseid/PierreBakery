@@ -76,6 +76,7 @@ namespace PierreBakery
       }
       CustomerOrder cusOrder = new CustomerOrder(numBread, numPastry, numFable);
       Console.WriteLine("The total cost of your order is $" + cusOrder._totalOrderCost);
+      Console.WriteLine("Buy more?");
     }
   }
 }
