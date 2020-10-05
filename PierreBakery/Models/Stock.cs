@@ -12,12 +12,11 @@ namespace Stock
       _breadOrder = numBread;
       _pastryOrder = numPastry;
       _fableOrder = numFable;
-      TotalOrderCost = GetTotalCost(numBread, numPastry, numFable);
     }
 
-    private int GetTotalCost (int numBread, int numPastry, int numFable)
+    public int GetTotalCost()
     {
-      return Bread.BreadCost(numBread) + Pastry.PastryCost(numPastry) + Fable.FableCost(numFable);
+      return Bread.BreadCost(_breadOrder) + Pastry.PastryCost(_pastryOrder) + Fable.FableCost(_fableOrder);
     }
   }
 
