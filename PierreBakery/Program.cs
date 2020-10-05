@@ -20,7 +20,7 @@ namespace PierreBakery
         productNumOrder.Add(GetProductNum(productName));
       }
       CustomerOrder cusOrder = new CustomerOrder(productNumOrder[0] + productNumOrder[1] + productNumOrder[2], productNumOrder[3], productNumOrder[4]);
-      Console.WriteLine("The total cost of your order is $" + cusOrder._totalOrderCost);
+      Console.WriteLine("The total cost of your order is $" + cusOrder.TotalOrderCost);
       EndProgram();
     }
     public static int GetProductNum(string productName)

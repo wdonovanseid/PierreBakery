@@ -34,7 +34,7 @@ namespace PierreBakery.Tests
     public void CustomerOrder_GetCorrectTotalCost_Int()
     {
       CustomerOrder testOrder = new CustomerOrder(4,7,15);
-      Assert.AreEqual(947, testOrder._totalOrderCost);
+      Assert.AreEqual(947, testOrder.TotalOrderCost);
     }
   }
 }

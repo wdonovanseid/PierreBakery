@@ -2,17 +2,17 @@ namespace Stock
 {
   public class CustomerOrder
   {
-    private int _breadOrder { get; set; }
-    private int _pastryOrder { get; set; }
-    private int _fableOrder { get; set; }
-    public int _totalOrderCost { get; set; }
+    private int _breadOrder;
+    private int _pastryOrder;
+    private int _fableOrder;
+    public int TotalOrderCost { get; set; }
 
     public CustomerOrder (int numBread, int numPastry, int numFable)
     {
       _breadOrder = numBread;
       _pastryOrder = numPastry;
       _fableOrder = numFable;
-      _totalOrderCost = GetTotalCost(numBread, numPastry, numFable);
+      TotalOrderCost = GetTotalCost(numBread, numPastry, numFable);
     }
 
     private int GetTotalCost (int numBread, int numPastry, int numFable)
