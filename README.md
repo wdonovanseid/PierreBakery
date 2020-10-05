@@ -26,7 +26,7 @@ All functionality for the models should be tested._
 
 * _Copy Repository_
 * _Navigate to PierreBakery.Tests directory in your terminal_
-* _Run "dotnet restore" in your terminal_
+* _Run "dotnet test" in your terminal_
 * _Navigate to PierreBakery directory in your terminal_
 * _Run "dotnet run" in your terminal_
 
